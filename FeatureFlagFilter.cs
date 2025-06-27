@@ -36,7 +36,7 @@ internal class FeatureFlagFilter : IActionFilter
 
             if (!_featureService.IsEnabled(featureAttribute.FeatureName, unleashContext))
             {
-                _logger.LogWarning("Feature '{FeatureName}' is disabled. Returning 403.", featureAttribute.FeatureName);
+                // _logger.LogWarning("Feature '{FeatureName}' is disabled. Returning 403.", featureAttribute.FeatureName);
 
                 var errorResponse = new
                 {
@@ -51,12 +51,12 @@ internal class FeatureFlagFilter : IActionFilter
                 return;
             }
 
-            Console.WriteLine($"Feature '{featureAttribute.FeatureName}' is enabled. Proceeding with action.");
+            // Console.WriteLine($"Feature '{featureAttribute.FeatureName}' is enabled. Proceeding with action.");
         }
     }
 
     public void OnActionExecuted(ActionExecutedContext context)
     {
-        Console.WriteLine("Action executed.");
+        // Console.WriteLine("Action executed.");
     }
 }
